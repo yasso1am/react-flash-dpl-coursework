@@ -1,5 +1,5 @@
 {
-  "name": "react-flash",
+  "name": "@yasso1am/react-flash",
   "version": "1.0.0",
   "description": "A flash component for React",
   "main": "./dist/index.js",
