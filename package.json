@@ -5,16 +5,25 @@
   "main": "./dist/index.js",
   "keywords": [
     "react",
-    "flash",
-    "practice"
+    "flash"
   ],
+  "author": "Andrew Yasso",
   "homepage": "https://github.com/yasso1am/react-flash-dpl-coursework",
   "repository": {
     "type": "git",
     "url": "https://github.com/yasso1am/react-flash-dpl-coursework"
   },
-  "author": "Andrew Yasso",
-  "license": "<MIT",
+  "scripts": {
+    "build:dev": "NODE_ENV=development webpack",
+    "build:production": "NODE_ENV=production webpack -p",
+    "prepublish": "npm run build:production"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "styled-components": "^3.3.3"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

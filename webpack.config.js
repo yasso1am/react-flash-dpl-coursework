@@ -10,18 +10,18 @@ const config = {
     path: BUILD_DIR,
     filename: 'index.js',
     libraryTarget: 'umd',
-    libary: 'ReactFlash'
+    library: 'ReactFlash'
   },
 
   module: {
     rules: [
       {
         loader: 'babel-loader',
-        test: /.js$/, 
+        test: /.js$/,
         exclude: /node_modules/,
         include: APP_DIR,
         options: {
-          preserts: ['latest', 'stage-2', 'react']
+          presets: ['latest', 'stage-2', 'react']
         }
       }
     ]
@@ -29,28 +29,17 @@ const config = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  config.externals = { 
+  config.externals = {
     'react': 'react',
     'react-dom': 'react-dom',
-    'styled-components': 'styled-components',
+    'styled-components': 'styled-components'
   }
 
   config.plugins = [
-    new webpack.ProvidePlugin({ 
+    new webpack.ProvidePlugin({
       'React': 'react'
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true
-      },
-      compress: {
-        warnings: flase,
-        screw_ie8: true
-      },
-      comments: false
-    })
   ]
 }
 
